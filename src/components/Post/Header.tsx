@@ -17,15 +17,19 @@ const Header = ({profilePicture, name}: Props) => {
         alignItems: 'center',
         justifyContent: 'space-between',
         marginTop: 16,
-        marginHorizontal: 16,
+        marginHorizontal: 8,
       }}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        <ProfilePicture source={profilePicture} size={32} />
-        <Text style={{color: '#fff', marginLeft: 8, fontWeight: 'bold'}}>
+      <View style={{flexDirection: 'row', alignItems: 'center', }}>
+        <View style={{marginRight:8}}>
+          <ProfilePicture source={profilePicture} size={32} showRing={true}  />
+        </View>
+        <Text style={{color: '#fff',  fontWeight: 'bold'}}>
           {name}
         </Text>
       </View>
-      <Ionicons name="ellipsis-vertical" size={18} color="#fff" />
+      <View>
+        <Ionicons name="ellipsis-vertical" size={18} color="#fff" />
+      </View>
     </View>
   );
 };

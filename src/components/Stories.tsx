@@ -1,28 +1,38 @@
 import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 import Story from './Story';
-
-const storiesData = [
-  {name: 'watson', source: require('../assets/images/a1.png')},
-  {name: 'emily', source: require('../assets/images/a2.png')},
-  {name: 'ariana', source: require('../assets/images/a3.png')},
-  {name: 'cara', source: require('../assets/images/a4.png')},
-  {name: 'kendall', source: require('../assets/images/a5.png')},
-  {name: 'tyson', source: require('../assets/images/a6.png')},
-  {name: 'jon', source: require('../assets/images/a7.png')},
-  {name: 'david', source: require('../assets/images/a8.png')},
-];
+import {stories} from '../data/stories';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../navigation/AppNavigator';
 
 const Stories = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <View>
       <FlatList
-        data={storiesData}
-        keyExtractor={item => item.source}
+        data={stories}
+        keyExtractor={item => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{paddingHorizontal: 12}}
         renderItem={({item}) => {
-          return <Story image={item.source} name={item.name} />;
+          return (
+            <View style={{marginRight: 12, alignItems: 'center'}}>
+              <Story
+                image={item.image}
+                name={item.name}
+                isUser={item.isUser}
+                onPress={() =>
+                  navigation.navigate('StoryView', {
+                    name: item.name,
+                    image: item.image,
+                  })
+                }
+              />
+            </View>
+          );
         }}
       />
     </View>

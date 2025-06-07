@@ -10,21 +10,34 @@ type User = {
   image: ImageSourcePropType;
 };
 
-type postType = {
+type PostType = {
+  id: string;
   user: User;
   image: ImageSourcePropType;
+  caption: string;
+  likesCount: number;
+  commentsCount: number;
+  sharesCount: number;
+  postedAt: string;
 };
 
-type postProps = {
-  post: postType;
+type PostProps = {
+  post: PostType;
 };
 
-const Post = ({post}: postProps) => {
+const Post = ({post}: PostProps) => {
   return (
     <View>
       <Header profilePicture={post.user.image} name={post.user.name} />
       <Body image={post.image} />
-      <Footer />
+      <Footer
+        name={post.user.name}
+        caption={post.caption}
+        likesCount={post.likesCount}
+        commentsCount={post.commentsCount}
+        sharesCount={post.sharesCount}
+        postedAt={post.postedAt}
+      />
     </View>
   );
 };
