@@ -2,9 +2,9 @@ import {
   View,
   Text,
   Image,
-  Dimensions,
   TextInput,
   TouchableWithoutFeedback,
+  useWindowDimensions,
   Alert,
 } from 'react-native';
 import React from 'react';
@@ -15,9 +15,8 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LikeDefaultIcon from '../assets/icons/like_default.svg';
 import ShareDefaultIcon from '../assets/icons/share.svg';
-
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+import ProfilePage from './ProfilePage';
+import {Screen} from 'react-native-screens';
 
 interface StoryViewProps {
   navigation: NativeStackNavigationProp<RootStackParamList, 'StoryView'>;
@@ -26,17 +25,20 @@ interface StoryViewProps {
 type StoryViewRouteProp = RouteProp<RootStackParamList, 'StoryView'>;
 
 const StoryViewScreen = ({navigation}: StoryViewProps) => {
+  const {width, height} = useWindowDimensions();
+
   const route = useRoute<StoryViewRouteProp>();
-  const {name, image} = route.params;
+  const {userId, name, image, storyImage, bio} = route.params;
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#000'}}>
       <View>
         <Image
-          source={require('../assets/images/para_jumping.jpg')}
+          source={storyImage}
           style={{
-            width: screenWidth,
-            height: screenHeight * 0.9,
+            width: width,
+            height: height * 0.9,
+
             marginTop: 8,
             borderRadius: 8,
           }}
@@ -56,8 +58,11 @@ const StoryViewScreen = ({navigation}: StoryViewProps) => {
           <TouchableWithoutFeedback
             onPress={() =>
               navigation.navigate('MainTabs', {
-                screen: 'Profile',
-                params: {name: name, image: image},
+                screen: 'HomeTabs',
+                params: {
+                  screen: 'ProfilePage',
+                  params: {name: name, userId: userId, image: image, bio: bio},
+                },
               })
             }>
             <View
@@ -107,6 +112,7 @@ const StoryViewScreen = ({navigation}: StoryViewProps) => {
             <TextInput
               placeholder="Send message"
               placeholderTextColor={'#fff'}
+              style={{color: '#fff'}}
             />
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>

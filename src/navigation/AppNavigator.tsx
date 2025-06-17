@@ -2,16 +2,27 @@ import {View, Text, ImageSourcePropType} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/HomeScreen';
-import TabNavigator, { TabStackParamList } from './TabNavigator';
+import TabNavigator, {TabStackParamList} from './TabNavigator';
+import {NavigatorScreenParams} from '@react-navigation/native';
+import MessengerScreen from '../screens/MessengerScreen';
+import {HomeStackParamList} from './HomeStackNavigator';
 import StoryViewScreen from '../screens/StoryViewScreen';
-import { NavigatorScreenParams } from '@react-navigation/native';
+import AddToStory from '../screens/AddToStory';
 
 export type RootStackParamList = {
   MainTabs: NavigatorScreenParams<TabStackParamList>;
-  StoryView: {name: string; image: ImageSourcePropType};
+  StoryView: {
+    userId: string;
+    name: string;
+    image: ImageSourcePropType;
+    storyImage: ImageSourcePropType;
+    bio: string;
+  };
+  Messenger: undefined;
+  AddToStory: undefined;
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
   return (
@@ -20,6 +31,8 @@ const AppNavigator = () => {
       screenOptions={{headerShown: false}}>
       <Stack.Screen name="MainTabs" component={TabNavigator} />
       <Stack.Screen name="StoryView" component={StoryViewScreen} />
+      <Stack.Screen name="Messenger" component={MessengerScreen} />
+      <Stack.Screen name="AddToStory" component={AddToStory} />
     </Stack.Navigator>
   );
 };

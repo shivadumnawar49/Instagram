@@ -1,5 +1,12 @@
-import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
-import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+  FlatList,
+  useWindowDimensions,
+} from 'react-native';
+import React, {use, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import BackIcon from '../assets/icons/back.svg';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -12,6 +19,13 @@ import GridDefaultIcon from '../assets/icons/grid_default.svg';
 import GridSelectedIcon from '../assets/icons/grid_selected.svg';
 import ReelsDefaultGreyIcon from '../assets/icons/reels_default_grey.svg';
 import ReelsSelectedIcon from '../assets/icons/reels_selected.svg';
+import TagsDefaultIcon from '../assets/icons/tags_default.svg';
+import TagsSelectedIcon from '../assets/icons/tags_selected.svg';
+import UserGrid from '../components/UserGrid';
+import UserReels from '../components/UserReels';
+import UserTags from '../components/UserTags';
+import {posts} from '../data/post';
+import ProfileNavBar from '../components/ProfileNavBar';
 
 interface ProfileScreenProps {
   navigation: NativeStackNavigationProp<TabStackParamList, 'Profile'>;
@@ -19,40 +33,19 @@ interface ProfileScreenProps {
 
 type ProfileRouteProp = RouteProp<TabStackParamList, 'Profile'>;
 
+type TabType = 'grid' | 'reels' | 'tags';
+
 const ProfileScreen = ({navigation}: ProfileScreenProps) => {
-  const [isSelected, setIsSelected] = useState(false);
+  const [isActiveTab, SetIsActiveTab] = useState<TabType>('grid');
   const route = useRoute<ProfileRouteProp>();
-  const {name, image} = route.params;
+  const {userId, name, image, thumbnail, bio} = route.params;
+  console.log('user id profile screen ', userId);
+  const userPosts = posts.filter(post => post.user.id === userId);
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
       <View style={{padding: 12}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: 16,
-          }}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <View style={{marginRight: 32}}>
-              <BackIcon />
-            </View>
-            <Text
-              style={{
-                color: '#fff',
-                fontSize: 20,
-                fontWeight: 'bold',
-              }}>
-              {name}
-            </Text>
-          </View>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <View style={{marginRight: 32}}>
-              <NotificationOffIcon />
-            </View>
-            <Ionicons name="ellipsis-vertical" size={18} color={'#fff'} />
-          </View>
-        </View>
+        <ProfileNavBar name={name} />
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <View
             style={{
@@ -88,7 +81,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
                 fontSize: 16,
                 fontWeight: 500,
               }}>
-              Shanker
+              {name}
             </Text>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <View style={{marginRight: 24}}>
@@ -112,7 +105,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
             </View>
           </View>
         </View>
-        <Text style={{color: '#fff', marginBottom: 8}}>You can do it.</Text>
+        <Text style={{color: '#fff', marginBottom: 8}}>{bio}</Text>
         <View
           style={{
             flexDirection: 'row',
@@ -159,34 +152,58 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
             <AddUserIcon width={24} height={24} />
           </View>
         </View>
-        <View>
-          {isSelected ? (
-            <TouchableWithoutFeedback
-              onPress={() => setIsSelected(!isSelected)}>
-              <GridSelectedIcon width={32} height={32} />
-            </TouchableWithoutFeedback>
-          ) : (
-            <TouchableWithoutFeedback
-              onPress={() => setIsSelected(!isSelected)}>
-              <GridDefaultIcon width={32} height={32} />
-            </TouchableWithoutFeedback>
-          )}
-        </View>
-
-        <View>
-          {isSelected ? (
-            <TouchableWithoutFeedback
-              onPress={() => setIsSelected(!isSelected)}>
-              <ReelsSelectedIcon width={32} height={32} />
-            </TouchableWithoutFeedback>
-          ) : (
-            <TouchableWithoutFeedback
-              onPress={() => setIsSelected(!isSelected)}>
-              <ReelsDefaultGreyIcon width={32} height={32} />
-            </TouchableWithoutFeedback>
-          )}
-        </View>
       </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          marginBottom: 16,
+        }}>
+        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('grid')}>
+          <View
+            style={{
+              width: '33%',
+              alignItems: 'center',
+            }}>
+            {isActiveTab === 'grid' ? (
+              <GridSelectedIcon />
+            ) : (
+              <GridDefaultIcon />
+            )}
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('reels')}>
+          <View
+            style={{
+              width: '33%',
+              alignItems: 'center',
+            }}>
+            {isActiveTab === 'reels' ? (
+              <ReelsSelectedIcon />
+            ) : (
+              <ReelsDefaultGreyIcon />
+            )}
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('tags')}>
+          <View
+            style={{
+              width: '33%',
+              alignItems: 'center',
+            }}>
+            {isActiveTab === 'tags' ? (
+              <TagsSelectedIcon />
+            ) : (
+              <TagsDefaultIcon />
+            )}
+          </View>
+        </TouchableWithoutFeedback>
+      </View>
+
+      {isActiveTab === 'grid' && <UserGrid data={userPosts} />}
+      {isActiveTab === 'reels' && <UserReels data={userPosts} />}
+      {/* {isActiveTab === 'tags' && <UserTags data={userPosts} />} */}
     </SafeAreaView>
   );
 };

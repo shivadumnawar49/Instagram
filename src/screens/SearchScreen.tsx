@@ -1,12 +1,13 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const SearchScreen = () => {
   return (
-    <View>
-      <Text>SearchScreen</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={{flex: 1, backgroundColor: '#000'}}>
+      <Text style={{color: '#fff'}}>SearchScreen</Text>
+    </SafeAreaView>
+  );
+};
 
-export default SearchScreen
+export default SearchScreen;

@@ -5,6 +5,8 @@ import {stories} from '../data/stories';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../navigation/AppNavigator';
+import {HomeStackParamList} from '../navigation/HomeStackNavigator';
+import ProfilePicture from './ProfilePicture';
 
 const Stories = () => {
   const navigation =
@@ -13,6 +15,10 @@ const Stories = () => {
     <View>
       <FlatList
         data={stories}
+        initialNumToRender={5}
+        maxToRenderPerBatch={5}
+        windowSize={5}
+        removeClippedSubviews={true}
         keyExtractor={item => item.id}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -23,11 +29,13 @@ const Stories = () => {
               <Story
                 image={item.image}
                 name={item.name}
-                isUser={item.isUser}
                 onPress={() =>
                   navigation.navigate('StoryView', {
+                    userId: item.userId,
                     name: item.name,
                     image: item.image,
+                    storyImage: item.storyImage,
+                    bio: item.bio,
                   })
                 }
               />

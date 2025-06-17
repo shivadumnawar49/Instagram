@@ -20,13 +20,21 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import InstagramLogo from '../assets/icons/instagram_logo.svg';
 import LikeDefaultIcon from '../assets/icons/like_default.svg';
 import MessengerIcon from '../assets/icons/messenger.svg';
+import HomeStackNavigator, {HomeStackParamList} from './HomeStackNavigator';
+import {NavigatorScreenParams} from '@react-navigation/native';
 
 export type TabStackParamList = {
-  Home: undefined;
+  HomeTabs: NavigatorScreenParams<HomeStackParamList>;
   Search: undefined;
   Post: undefined;
   Reels: undefined;
-  Profile: {name: string; image: ImageSourcePropType};
+  Profile: {
+    userId: string;
+    name: string;
+    image: ImageSourcePropType;
+    thumbnail?:ImageSourcePropType;
+    bio: string;
+  };
 };
 
 const Tab = createBottomTabNavigator<TabStackParamList>();
@@ -34,7 +42,7 @@ const Tab = createBottomTabNavigator<TabStackParamList>();
 const TabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeTabs"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {backgroundColor: '#000', borderColor: '#303030'},
@@ -42,8 +50,8 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
       }}>
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeTabs"
+        component={HomeStackNavigator}
         options={{
           title: 'Home',
           tabBarIcon: ({focused}) =>
@@ -80,6 +88,11 @@ const TabNavigator = () => {
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
+        initialParams={{
+          userId: '1',
+          name: 'Shiva',
+          image: require('../assets/images/shiva.jpg'),
+        }}
         options={{
           title: 'Profile',
           tabBarIcon: ({focused}) =>
@@ -95,13 +108,13 @@ const TabNavigator = () => {
                   justifyContent: 'center',
                 }}>
                 <Image
-                  source={require('../assets/images/a1.png')}
+                  source={require('../assets/images/shiva.jpg')}
                   style={{width: 28, height: 28, borderRadius: 14}}
                 />
               </View>
             ) : (
               <Image
-                source={require('../assets/images/a1.png')}
+                source={require('../assets/images/shiva.jpg')}
                 style={{width: 28, height: 28, borderRadius: 14}}
               />
             ),
