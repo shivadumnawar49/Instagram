@@ -13,7 +13,6 @@ This project focuses on replicating Instagram features such as stories, post int
 <img src='https://github.com/user-attachments/assets/e40dc46a-55ec-4337-bb79-87c846860a89' width='300' />
 <img src='https://github.com/user-attachments/assets/daa40e3d-07cd-4f2a-bbf7-b89acfb3da4f' width='300' />
 <img src='https://github.com/user-attachments/assets/dae6b096-0e21-4a80-9654-12ed5d41a7cf' width='300' />
-<img src='https://github.com/user-attachments/assets/f84d5cd3-afd1-457c-b627-2f89999381ef' width='300' />
 <img src='https://github.com/user-attachments/assets/909ec3c5-9061-494e-ae75-1be2ccc29424' width='300' />
 
 
