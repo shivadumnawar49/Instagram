@@ -4,6 +4,20 @@ An Instagram-like mobile app UI built using React Native and TypeScript.
 
 This project focuses on replicating Instagram features such as stories, post interactions (likes, shares, comments, bookmarks), user profiles with grid layout and reels section - built with clean navigation and scalable component structure. 
 
+
+<img src='https://github.com/user-attachments/assets/fff07e85-8a80-4c21-9bdc-af82ebffad5a' width='300' />
+<img src='https://github.com/user-attachments/assets/daa40e3d-07cd-4f2a-bbf7-b89acfb3da4f' width='300' />
+<img src='https://github.com/user-attachments/assets/79fe9eb7-b69c-40da-b5bb-64b9754213e8' width='300' />
+<img src='https://github.com/user-attachments/assets/dae6b096-0e21-4a80-9654-12ed5d41a7cf' width='300' />
+<img src='https://github.com/user-attachments/assets/f84d5cd3-afd1-457c-b627-2f89999381ef' width='300' />
+<img src='https://github.com/user-attachments/assets/44edd3b2-24a4-4eb4-9abf-fd239ec2161e' width='300' />
+<img src='https://github.com/user-attachments/assets/cbc94ee4-fa89-4537-ad53-0acd89195b6b' width='300' />
+<img src='https://github.com/user-attachments/assets/e40dc46a-55ec-4337-bb79-87c846860a89' width='300' />
+<img src='https://github.com/user-attachments/assets/909ec3c5-9061-494e-ae75-1be2ccc29424' width='300' />
+<img src='https://github.com/user-attachments/assets/11e12522-f444-4832-923e-bad567ef6589' width='300' />
+
+
+
 #Features
 1. React Native and TypeScript - setup with scalable component structure
 2. React Navigation - with stack and bottom tab navigators
@@ -22,15 +36,6 @@ This project focuses on replicating Instagram features such as stories, post int
 Click here to view the demo 
 https://drive.google.com/file/d/10VlCddrVHK6GOMLfmS4IHIPDh9nvh1g6/view?usp=drivesdk
 
-<img src='https://github.com/user-attachments/assets/fff07e85-8a80-4c21-9bdc-af82ebffad5a' width='300' />
-<img src='https://github.com/user-attachments/assets/daa40e3d-07cd-4f2a-bbf7-b89acfb3da4f' width='300' />
-<img src='https://github.com/user-attachments/assets/79fe9eb7-b69c-40da-b5bb-64b9754213e8' width='300' />
-<img src='https://github.com/user-attachments/assets/dae6b096-0e21-4a80-9654-12ed5d41a7cf' width='300' />
-<img src='https://github.com/user-attachments/assets/f84d5cd3-afd1-457c-b627-2f89999381ef' width='300' />
-<img src='https://github.com/user-attachments/assets/44edd3b2-24a4-4eb4-9abf-fd239ec2161e' width='300' />
-<img src='https://github.com/user-attachments/assets/cbc94ee4-fa89-4537-ad53-0acd89195b6b' width='300' />
-<img src='https://github.com/user-attachments/assets/e40dc46a-55ec-4337-bb79-87c846860a89' width='300' />
-<img src='https://github.com/user-attachments/assets/909ec3c5-9061-494e-ae75-1be2ccc29424' width='300' />
 
 
 
