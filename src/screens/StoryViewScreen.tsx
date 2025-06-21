@@ -25,9 +25,11 @@ interface StoryViewProps {
 type StoryViewRouteProp = RouteProp<RootStackParamList, 'StoryView'>;
 
 const StoryViewScreen = ({navigation}: StoryViewProps) => {
+  
   const {width, height} = useWindowDimensions();
 
   const route = useRoute<StoryViewRouteProp>();
+  console.log('route params', route.params);
   const {userId, name, image, storyImage, bio} = route.params;
 
   return (

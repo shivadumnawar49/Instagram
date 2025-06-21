@@ -1,4 +1,4 @@
-import {View, Text, TouchableWithoutFeedback} from 'react-native';
+import {View, Text, TouchableWithoutFeedback, TouchableOpacity} from 'react-native';
 import React from 'react';
 import ProfilePicture from '../ProfilePicture';
 import {ImageSourcePropType} from 'react-native';
@@ -11,9 +11,9 @@ import {TabStackParamList} from '../../navigation/TabNavigator';
 
 type Props = {
   userId: string;
-  profilePicture: ImageSourcePropType;
+  profilePicture: {uri: string};
   name: string;
-  thumbnail?: ImageSourcePropType;
+  thumbnail?: {uri: string};
   bio: string;
 };
 
@@ -33,7 +33,7 @@ const Header = ({userId, profilePicture, name, thumbnail, bio}: Props) => {
         marginTop: 16,
         marginHorizontal: 8,
       }}>
-      <TouchableWithoutFeedback
+      <TouchableOpacity
         onPress={() =>
           navigation.navigate( userId ==='1'? 'Profile': 'ProfilePage', {
             userId: userId,
@@ -54,7 +54,7 @@ const Header = ({userId, profilePicture, name, thumbnail, bio}: Props) => {
           </View>
           <Text style={{color: '#fff', fontWeight: '500'}}>{name}</Text>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
       <View>
         <Ionicons name="ellipsis-vertical" size={18} color="#fff" />
       </View>

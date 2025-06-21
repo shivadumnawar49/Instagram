@@ -6,7 +6,7 @@ import {
   FlatList,
   useWindowDimensions,
 } from 'react-native';
-import React, {use, useState} from 'react';
+import React, {use, useState, useMemo} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TabStackParamList} from '../navigation/TabNavigator';
@@ -35,11 +35,25 @@ type ProfilePageRouteProp = RouteProp<HomeStackParamList, 'ProfilePage'>;
 type TabType = 'grid' | 'reels' | 'tags';
 
 const ProfilePage = ({navigation}: ProfilePageScreenProps) => {
-  const [isActiveTab, SetIsActiveTab] = useState<TabType>('grid');
+  const [isActiveTab, setIsActiveTab] = useState<TabType>('grid');
   const route = useRoute<ProfilePageRouteProp>();
   const {userId, name, image, thumbnail, bio} = route.params;
   console.log('user id profile page ', userId);
-  const userPosts = posts.filter(post => post.user.id === userId);
+  const userPosts = useMemo(
+    () => posts.filter(post => post.user.id === userId),
+    [userId],
+  );
+
+  const imagePosts = useMemo(
+    () => userPosts.filter(post => post.image),
+    [userPosts],
+  );
+
+  const videoPosts = useMemo(
+    () => userPosts.filter(post  => post.thumbnail),
+    [userPosts],
+  );
+
   const thumbnailsList = posts.filter(
     post => post.user.id === userId && post.thumbnail,
   );
@@ -161,7 +175,7 @@ const ProfilePage = ({navigation}: ProfilePageScreenProps) => {
           justifyContent: 'space-around',
           marginBottom: 16,
         }}>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('grid')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('grid')}>
           <View
             style={{
               width: '33%',
@@ -174,7 +188,7 @@ const ProfilePage = ({navigation}: ProfilePageScreenProps) => {
             )}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('reels')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('reels')}>
           <View
             style={{
               width: '33%',
@@ -187,7 +201,7 @@ const ProfilePage = ({navigation}: ProfilePageScreenProps) => {
             )}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('tags')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('tags')}>
           <View
             style={{
               width: '33%',
@@ -202,8 +216,8 @@ const ProfilePage = ({navigation}: ProfilePageScreenProps) => {
         </TouchableWithoutFeedback>
       </View>
 
-      {isActiveTab === 'grid' && <UserGrid data={userPosts} />}
-      {isActiveTab === 'reels' && <UserReels data={thumbnailsList} />}
+      {isActiveTab === 'grid' && <UserGrid data={imagePosts} />}
+      {isActiveTab === 'reels' && <UserReels data={videoPosts} />}
       {/* {isActiveTab === 'tags' && <UserTags data={userPosts} />} */}
     </SafeAreaView>
   );

@@ -5,8 +5,9 @@ import {
   TouchableWithoutFeedback,
   Alert,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
 import Post from './Post';
 import Stories from './Stories';
 import InstagramLogo from '../assets/icons/instagram_logo.svg';
@@ -21,6 +22,8 @@ import HomeStackNavigator, {
 } from '../navigation/HomeStackNavigator';
 import {TabStackParamList} from '../navigation/TabNavigator';
 import ProfilePicture from './ProfilePicture';
+import {PostType} from './Post';
+import throttle from 'lodash/throttle';
 
 const viewabilityConfig = {itemVisiblePercentThreshold: 80};
 
@@ -29,11 +32,12 @@ type FeedNavigationProp = CompositeNavigationProp<
   NativeStackNavigationProp<HomeStackParamList>
 >;
 
+const CHUNK_SIZE = 5;
+
 const Feed = () => {
   const navigation = useNavigation<FeedNavigationProp>();
   const [activeId, setActiveId] = useState<string | null>(null);
 
-  const CHUNK_SIZE = 5;
   const [displayedPosts, setDisplayedPosts] = useState(
     posts.slice(0, CHUNK_SIZE),
   );
@@ -51,13 +55,15 @@ const Feed = () => {
     }
   };
 
-  const onViewableItemsChanged = useRef(({viewableItems}: any) => {
-    if (viewableItems.length > 0) {
-      setActiveId(viewableItems[0].item.id);
-    }
-  }).current;
+  const onViewableItemsChanged = useRef(
+    throttle(({viewableItems}) => {
+      if (viewableItems.length > 0) {
+        setActiveId(viewableItems[0].item.id);
+      }
+    }, 500),
+  ).current;
 
-  const Header = () => {
+  const Header = useMemo(() => {
     return (
       <View>
         <View
@@ -73,37 +79,47 @@ const Feed = () => {
             <InstagramLogo />
           </View>
           <View style={{flexDirection: 'row'}}>
-            <TouchableWithoutFeedback
+            <TouchableOpacity
               onPress={() => navigation.navigate('Notifications')}>
               <LikeDefaultIcon style={{marginRight: 24}} />
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback
-              onPress={() => navigation.navigate('Messenger')}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Messenger')}>
               <MessengerIcon />
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           </View>
         </View>
 
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <ProfilePicture
-            source={require('../assets/images/shiva.jpg')}
-            showRing={false}
-            isUser={true}
-          />
-          <Stories />
-        </ScrollView>
+        <View>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <ProfilePicture
+              source={{
+                uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg',
+              }}
+              showRing={false}
+              isUser={true}
+            />
+            <Stories />
+          </ScrollView>
+        </View>
       </View>
     );
-  };
+  }, []);
+
+  const renderItem = useCallback(
+    ({item}: {item: PostType}) => {
+      return <Post post={item} isPlaying={item.id === activeId} />;
+    },
+    [activeId],
+  );
 
   return (
     <FlatList
       data={displayedPosts}
       keyExtractor={item => item.id}
-      initialNumToRender={CHUNK_SIZE}
-      maxToRenderPerBatch={CHUNK_SIZE}
-      windowSize={5}
-      removeClippedSubviews={true}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      windowSize={10}
+      removeClippedSubviews={false}
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={Header}
       contentContainerStyle={{paddingBottom: 30}}
@@ -111,9 +127,7 @@ const Feed = () => {
       onViewableItemsChanged={onViewableItemsChanged}
       onEndReached={loadMorePosts}
       onEndReachedThreshold={0.5}
-      renderItem={({item}) => {
-        return <Post post={item} isPlaying={item.id === activeId} />;
-      }}
+      renderItem={renderItem}
     />
   );
 };

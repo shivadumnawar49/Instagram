@@ -5,64 +5,96 @@ export const stories = [
     id: '1',
     userId: '111',
     name: 'rakesh',
-    image: require('../assets/images/child.jpg'),
-    storyImage: require('../assets/images/little-boy-cycling.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/child.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/little-boy-cycling.jpg',
+    },
     bio: 'Making ideas happen.',
   },
   {
     id: '2',
     userId: '112',
     name: 'tanvi',
-    image: require('../assets/images/tanvi.jpg'),
-    storyImage: require('../assets/images/tourist.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tourist.jpg',
+    },
     bio: 'Your dream life is real—if you build it.',
   },
   {
     id: '3',
     userId: '117',
     name: 'kritika',
-    image: require('../assets/images/kritika.png'),
-    storyImage: require('../assets/images/oldman-cycling.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kritika.png',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/oldman-cycling.jpg',
+    },
     bio: 'Mindset makes the magic.',
   },
   {
     id: '4',
     userId: '114',
     name: 'joe',
-    image: require('../assets/images/little-boy-cycling.jpg'),
-    storyImage: require('../assets/images/dog.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/little-boy-cycling.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/dog.jpg',
+    },
     bio: 'Born to stand out.',
   },
   {
     id: '5',
     userId: '119',
     name: 'lucky',
-    image: require('../assets/images/lucky.jpg'),
-    storyImage: require('../assets/images/cute-girl.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/lucky.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/cute-girl.jpg',
+    },
     bio: 'Ocean heart, mountain mind.',
   },
   {
     id: '6',
     userId: '116',
     name: 'vishal',
-    image: require('../assets/images/vishal.jpg'),
-    storyImage: require('../assets/images/vishal.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/vishal.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/vishal.jpg',
+    },
     bio: 'Turning everyday into art.',
   },
   {
     id: '7',
     userId: '117',
     name: 'anirudh',
-    image: require('../assets/images/aryan.jpg'),
-    storyImage: require('../assets/images/saint.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/aryan.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/saint.jpg',
+    },
     bio: 'Believe.',
   },
   {
     id: '8',
     userId: '118',
     name: 'karthik',
-    image: require('../assets/images/photographer.jpg'),
-    storyImage: require('../assets/images/para_jumping.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/photographer.jpg',
+    },
+    storyImage: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/para_jumping.jpg',
+    },
     bio: 'Calm mind. Fierce heart.',
   },
 ];

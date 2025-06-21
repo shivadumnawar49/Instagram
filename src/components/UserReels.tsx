@@ -12,7 +12,6 @@ import SelectedReelsIcon from '../assets/icons/reels_selected.svg';
 
 import {posts} from '../data/post';
 
-const musicThumb = require('../assets/images/music-thumb.jpg');
 
 const UserReels = ({data}: any) => {
   const {width} = useWindowDimensions();

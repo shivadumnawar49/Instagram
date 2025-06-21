@@ -11,8 +11,8 @@ export type HomeStackParamList = {
   ProfilePage: {
     userId: string;
     name: string;
-    image: ImageSourcePropType;
-    thumbnail?: ImageSourcePropType;
+    image: {uri: string};
+    thumbnail?: {uri: string};
     bio: string;
   };
 };

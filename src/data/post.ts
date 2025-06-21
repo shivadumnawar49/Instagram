@@ -3,11 +3,15 @@ export const posts = [
     id: '1',
     user: {
       id: '111',
-      image: require('../assets/images/child.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/child.jpg',
+      },
       name: 'rakesh',
       bio: 'Making ideas happen.',
     },
-    image: require('../assets/images/kanyakumari.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kanyakumari.jpg',
+    },
     type: 'image',
     caption:
       'Samundar ki lehron ke beech, bhagwa lehrata hai. Kanyakumari — desh ki seema, dil ke kareeb. 🚩',
@@ -20,11 +24,15 @@ export const posts = [
     id: '2',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    image: require('../assets/images/rocket.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/rocket.jpg',
+    },
     type: 'image',
     caption: 'Every big dream needs a powerful lift-off.🚀',
     likesCount: 1876,
@@ -36,11 +44,15 @@ export const posts = [
     id: '3',
     user: {
       id: '116',
-      image: require('../assets/images/vishal.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/vishal.jpg',
+      },
       name: 'vishal',
       bio: 'Turning everyday into art.',
     },
-    image: require('../assets/images/photographer.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/photographer.jpg',
+    },
     type: 'image',
     caption: 'Click, capture, create. 📷',
     likesCount: 355,
@@ -52,13 +64,19 @@ export const posts = [
     id: '4',
     user: {
       id: '114',
-      image: require('../assets/images/vikram.png'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/vikram.png',
+      },
       name: 'vikram',
       bio: 'Dream big. Stay grounded.',
     },
-    video: require('../assets/videos/music.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/music.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/music-thumb.jpg'),
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/music-thumb.jpg',
+    },
     caption: 'Tiny hands, big beats 🥁✨',
     likesCount: 3987,
     commentsCount: 833,
@@ -69,11 +87,15 @@ export const posts = [
     id: '5',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    image: require('../assets/images/sunset-village.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/sunset-village.jpg',
+    },
     type: 'image',
     caption:
       'Evening boats, golden skies, and stories flowing with the current.',
@@ -86,11 +108,15 @@ export const posts = [
     id: '6',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    image: require('../assets/images/little-girl.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/little-girl.jpg',
+    },
     type: 'image',
     caption: 'A smile that lights up the day.',
     likesCount: 712,
@@ -102,13 +128,19 @@ export const posts = [
     id: '7',
     user: {
       id: '117',
-      image: require('../assets/images/kritika.png'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kritika.png',
+      },
       name: 'kritika',
       bio: 'Mindset makes the magic.',
     },
-    video: require('../assets/videos/bike-ride.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/bike-ride.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/bike-ride-thumb.jpg'),
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/bike-ride-thumb.jpg',
+    },
     caption: 'Riding through nature’s heartbeat.',
     likesCount: 4822,
     commentsCount: 1459,
@@ -119,11 +151,15 @@ export const posts = [
     id: '8',
     user: {
       id: '118',
-      image: require('../assets/images/shashank.png'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shashank.png',
+      },
       name: 'shashank',
       bio: 'I’m not done yet.',
     },
-    image: require('../assets/images/child.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/child.jpg',
+    },
     type: 'image',
     caption: 'Sunglasses on, worries gone.',
     likesCount: 1022,
@@ -135,11 +171,15 @@ export const posts = [
     id: '9',
     user: {
       id: '119',
-      image: require('../assets/images/lucky.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/lucky.jpg',
+      },
       name: 'lucky',
       bio: 'Ocean heart, mountain mind.',
     },
-    image: require('../assets/images/bike.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/bike.jpg',
+    },
     type: 'image',
     caption: "That feeling when you're just you and the road.",
     likesCount: 2800,
@@ -151,11 +191,15 @@ export const posts = [
     id: '10',
     user: {
       id: '119',
-      image: require('../assets/images/lucky.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/lucky.jpg',
+      },
       name: 'lucky',
       bio: 'Ocean heart, mountain mind.',
     },
-    image: require('../assets/images/kashi-pooja.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kashi-pooja.jpg',
+    },
     type: 'image',
     caption:
       'Witnessing the devotion and spiritual energy of the Ganga Aarti in Kashi. 🙏',
@@ -169,13 +213,19 @@ export const posts = [
     id: '11',
     user: {
       id: '121',
-      image: require('../assets/images/kiwi.png'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kiwi.png',
+      },
       name: 'kiwi',
       bio: 'Dreaming out loud.',
     },
-    video: require('../assets/videos/cricket.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/cricket.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/cricket-thumb.jpg'),
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/cricket-thumb.jpg',
+    },
     caption: 'Cricket 🏏',
     likesCount: 3300,
     commentsCount: 1897,
@@ -186,13 +236,19 @@ export const posts = [
     id: '12',
     user: {
       id: '122',
-      image: require('../assets/images/little-boy-cycling.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/little-boy-cycling.jpg',
+      },
       name: 'sourabh',
       bio: 'Calm mind. Fierce heart.',
     },
-    video: require('../assets/videos/village.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/village.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/village-thumb.jpg'),
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/village-thumb.jpg',
+    },
     caption: 'Green fields, blue skies, and a heart full of calm.',
     likesCount: 2478,
     commentsCount: 1334,
@@ -203,11 +259,15 @@ export const posts = [
     id: '13',
     user: {
       id: '123',
-      image: require('../assets/images/child.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/child.jpg',
+      },
       name: 'venkat',
       bio: 'Hustle quietly.',
     },
-    image: require('../assets/images/boating.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/boating.jpg',
+    },
     type: 'image',
     caption: 'Evening vibes. Ocean rides.',
     likesCount: 1509,
@@ -219,11 +279,15 @@ export const posts = [
     id: '14',
     user: {
       id: '124',
-      image: require('../assets/images/little-girl.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/little-boy-cycling.jpg',
+      },
       name: 'neha',
       bio: 'Trust the timing.',
     },
-    image: require('../assets/images/car.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/car.jpg',
+    },
     type: 'image',
     caption: 'Speed isn’t just a number—it’s a way of life.',
     likesCount: 5021,
@@ -236,11 +300,15 @@ export const posts = [
     id: '15',
     user: {
       id: '1',
-      image: require('../assets/images/shiva.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg',
+      },
       name: 'shiva',
       bio: 'You can do it.',
     },
-    image: require('../assets/images/dog1.jpg'),
+    image: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/dog1.jpg',
+    },
     type: 'image',
     caption: 'A moment by the sea, a memory for a lifetime.',
     likesCount: 1534,
@@ -252,14 +320,20 @@ export const posts = [
     id: '16',
     user: {
       id: '117',
-      image: require('../assets/images/kritika.png'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/kritika.png',
+      },
       name: 'kritika',
       bio: 'Mindset makes the magic.',
     },
-    video: require('../assets/videos/village.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/village.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/village-thumb.jpg'),
-    caption: 'Riding through nature’s heartbeat.',
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/village-thumb.jpg',
+    },
+    caption: 'My village.',
     likesCount: 4822,
     commentsCount: 1459,
     sharesCount: 2300,
@@ -269,14 +343,20 @@ export const posts = [
     id: '17',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    video: require('../assets/videos/bike-ride.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/bike-ride.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/bike-ride-thumb.jpg'),
-    caption: 'Every big dream needs a powerful lift-off.🚀',
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/bike-ride-thumb.jpg',
+    },
+    caption: 'Bike Ride',
     likesCount: 1876,
     commentsCount: 498,
     sharesCount: 778,
@@ -286,14 +366,20 @@ export const posts = [
     id: '18',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    video: require('../assets/videos/village.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/bird.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/village-thumb.jpg'),
-    caption: 'Every big dream needs a powerful lift-off.🚀',
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/bird-thumb.jpg',
+    },
+    caption: 'Little bird.',
     likesCount: 1876,
     commentsCount: 498,
     sharesCount: 778,
@@ -303,14 +389,20 @@ export const posts = [
     id: '19',
     user: {
       id: '112',
-      image: require('../assets/images/tanvi.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/tanvi.jpg',
+      },
       name: 'tanvi',
       bio: 'Your dream life is real—if you build it.',
     },
-    video: require('../assets/videos/music.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/mountains.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/music-thumb.jpg'),
-    caption: 'Every big dream needs a powerful lift-off.🚀',
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/mountains-thumb.jpg',
+    },
+    caption: 'Beautiful nature.',
     likesCount: 1876,
     commentsCount: 498,
     sharesCount: 778,
@@ -320,53 +412,23 @@ export const posts = [
     id: '20',
     user: {
       id: '116',
-      image: require('../assets/images/vishal.jpg'),
+      image: {
+        uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/vishal.jpg',
+      },
       name: 'vishal',
       bio: 'Turning everyday into art.',
     },
-    video: require('../assets/videos/music.mp4'),
+    video: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/videos/bird.mp4',
+    },
     type: 'video',
-    thumbnail: require('../assets/images/music-thumb.jpg'),
-    caption: 'Click, capture, create. 📷',
+    thumbnail: {
+      uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/bird-thumb.jpg',
+    },
+    caption: 'little bird',
     likesCount: 355,
     commentsCount: 127,
     sharesCount: 80,
-    postedAt: '5 May',
-  },
-  {
-    id: '21',
-    user: {
-      id: '119',
-      image: require('../assets/images/lucky.jpg'),
-      name: 'lucky',
-      bio: 'Ocean heart, mountain mind.',
-    },
-    video: require('../assets/videos/village.mp4'),
-    type: 'video',
-    thumbnail: require('../assets/images/village-thumb.jpg'),
-    caption:
-      'Witnessing the devotion and spiritual energy of the Ganga Aarti in Kashi. 🙏',
-    likesCount: 7800,
-    commentsCount: 2094,
-    sharesCount: 4520,
-    postedAt: '5 May',
-  },
-  {
-    id: '22',
-    user: {
-      id: '119',
-      image: require('../assets/images/lucky.jpg'),
-      name: 'lucky',
-      bio: 'Ocean heart, mountain mind.',
-    },
-    video: require('../assets/videos/cricket.mp4'),
-    type: 'video',
-    thumbnail: require('../assets/images/cricket-thumb.jpg'),
-    caption:
-      'Witnessing the devotion and spiritual energy of the Ganga Aarti in Kashi. 🙏',
-    likesCount: 7800,
-    commentsCount: 2094,
-    sharesCount: 4520,
     postedAt: '5 May',
   },
 ];

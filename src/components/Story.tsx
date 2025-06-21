@@ -4,7 +4,7 @@ import ProfilePicture from './ProfilePicture';
 import {ImageSourcePropType} from 'react-native';
 
 type Props = {
-  image: ImageSourcePropType;
+  image: {uri: string};
   name: string;
   onPress: () => void;
 };

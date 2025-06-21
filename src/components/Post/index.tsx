@@ -8,16 +8,16 @@ import Footer from './Footer';
 type User = {
   id: string;
   name: string;
-  image: ImageSourcePropType;
+  image: {uri: string};
   bio: string;
 };
 
-type PostType = {
+export type PostType = {
   id: string;
   user: User;
-  image?: ImageSourcePropType;
-  video?: number | string;
-  thumbnail?: ImageSourcePropType;
+  image?:  {uri: string};
+  video?:  {uri: string};
+  thumbnail?:  {uri: string};
   caption: string;
   likesCount: number;
   commentsCount: number;
@@ -30,7 +30,7 @@ type PostProps = {
   isPlaying: boolean;
 };
 
-const Post = ({post, isPlaying}: PostProps) => {
+const Post = React.memo(({post, isPlaying}: PostProps) => {
   return (
     <View>
       <Header
@@ -51,6 +51,6 @@ const Post = ({post, isPlaying}: PostProps) => {
       />
     </View>
   );
-};
+});
 
 export default Post;

@@ -31,8 +31,8 @@ export type TabStackParamList = {
   Profile: {
     userId: string;
     name: string;
-    image: ImageSourcePropType;
-    thumbnail?:ImageSourcePropType;
+    image: {uri: string};
+    thumbnail?:{uri: string};
     bio: string;
   };
 };
@@ -91,7 +91,7 @@ const TabNavigator = () => {
         initialParams={{
           userId: '1',
           name: 'Shiva',
-          image: require('../assets/images/shiva.jpg'),
+          image: {uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg'},
         }}
         options={{
           title: 'Profile',
@@ -108,13 +108,13 @@ const TabNavigator = () => {
                   justifyContent: 'center',
                 }}>
                 <Image
-                  source={require('../assets/images/shiva.jpg')}
+                  source={{uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg'}}
                   style={{width: 28, height: 28, borderRadius: 14}}
                 />
               </View>
             ) : (
               <Image
-                source={require('../assets/images/shiva.jpg')}
+                source={{uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg'}}
                 style={{width: 28, height: 28, borderRadius: 14}}
               />
             ),

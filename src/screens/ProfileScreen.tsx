@@ -6,7 +6,7 @@ import {
   FlatList,
   useWindowDimensions,
 } from 'react-native';
-import React, {use, useState} from 'react';
+import React, {use, useMemo, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import BackIcon from '../assets/icons/back.svg';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -36,11 +36,25 @@ type ProfileRouteProp = RouteProp<TabStackParamList, 'Profile'>;
 type TabType = 'grid' | 'reels' | 'tags';
 
 const ProfileScreen = ({navigation}: ProfileScreenProps) => {
-  const [isActiveTab, SetIsActiveTab] = useState<TabType>('grid');
+  const [isActiveTab, setIsActiveTab] = useState<TabType>('grid');
   const route = useRoute<ProfileRouteProp>();
   const {userId, name, image, thumbnail, bio} = route.params;
   console.log('user id profile screen ', userId);
-  const userPosts = posts.filter(post => post.user.id === userId);
+
+  const userPosts = useMemo(
+    () => posts.filter(post => post.user.id === userId),
+    [userId],
+  );
+
+  const imagePosts = useMemo(
+    () => userPosts.filter(post => post.image),
+    [userPosts],
+  );
+
+  const videoPosts = useMemo(
+    () => userPosts.filter(post => post.thumbnail),
+    [userPosts],
+  );
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
@@ -160,7 +174,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
           justifyContent: 'space-around',
           marginBottom: 16,
         }}>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('grid')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('grid')}>
           <View
             style={{
               width: '33%',
@@ -173,7 +187,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
             )}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('reels')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('reels')}>
           <View
             style={{
               width: '33%',
@@ -186,7 +200,7 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
             )}
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => SetIsActiveTab('tags')}>
+        <TouchableWithoutFeedback onPress={() => setIsActiveTab('tags')}>
           <View
             style={{
               width: '33%',
@@ -201,8 +215,8 @@ const ProfileScreen = ({navigation}: ProfileScreenProps) => {
         </TouchableWithoutFeedback>
       </View>
 
-      {isActiveTab === 'grid' && <UserGrid data={userPosts} />}
-      {isActiveTab === 'reels' && <UserReels data={userPosts} />}
+      {isActiveTab === 'grid' && <UserGrid data={imagePosts} />}
+      {isActiveTab === 'reels' && <UserReels data={videoPosts} />}
       {/* {isActiveTab === 'tags' && <UserTags data={userPosts} />} */}
     </SafeAreaView>
   );

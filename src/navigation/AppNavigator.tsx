@@ -14,8 +14,8 @@ export type RootStackParamList = {
   StoryView: {
     userId: string;
     name: string;
-    image: ImageSourcePropType;
-    storyImage: ImageSourcePropType;
+    image: {uri: string};
+    storyImage: {uri: string};
     bio: string;
   };
   Messenger: undefined;

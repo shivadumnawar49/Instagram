@@ -12,7 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 type Props = {
-  source: ImageSourcePropType;
+  source: {uri: string};
   size?: number;
   showRing: boolean;
   isUser?: boolean;
