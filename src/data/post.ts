@@ -304,7 +304,7 @@ export const posts = [
         uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg',
       },
       name: 'shiva',
-      bio: 'You can do it.',
+      bio: 'Be Loyal.',
     },
     image: {
       uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/dog1.jpg',

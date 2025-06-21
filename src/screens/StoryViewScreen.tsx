@@ -32,6 +32,8 @@ const StoryViewScreen = ({navigation}: StoryViewProps) => {
   console.log('route params', route.params);
   const {userId, name, image, storyImage, bio} = route.params;
 
+  const imageHeight = width * 16/9;
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#000'}}>
       <View>
@@ -39,9 +41,8 @@ const StoryViewScreen = ({navigation}: StoryViewProps) => {
           source={storyImage}
           style={{
             width: width,
-            height: height * 0.9,
-
             marginTop: 8,
+            height: imageHeight,
             borderRadius: 8,
           }}
           resizeMode="cover"

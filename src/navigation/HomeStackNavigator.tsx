@@ -23,7 +23,7 @@ const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator
       initialRouteName="Home"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: false, contentStyle: {backgroundColor:'#000'}}}>
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Notifications" component={Notifications} />
       <HomeStack.Screen name="ProfilePage" component={ProfilePage} />

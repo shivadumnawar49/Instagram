@@ -1,14 +1,16 @@
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import BackIcon from '../assets/icons/back.svg';
 import NotificationOffIcon from '../assets/icons/notifications_off.svg';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = {
   name: string;
 };
 
 const ProfileNavBar = ({name}: Props) => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -19,7 +21,9 @@ const ProfileNavBar = ({name}: Props) => {
       }}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View style={{marginRight: 32}}>
-          <BackIcon />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <BackIcon />
+          </TouchableOpacity>
         </View>
         <Text
           style={{

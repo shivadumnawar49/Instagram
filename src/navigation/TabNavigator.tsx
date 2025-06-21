@@ -92,6 +92,7 @@ const TabNavigator = () => {
           userId: '1',
           name: 'Shiva',
           image: {uri: 'https://insta-clone-14.s3.eu-north-1.amazonaws.com/assets/images/shiva.jpg'},
+          bio: 'Be Loyal.'
         }}
         options={{
           title: 'Profile',

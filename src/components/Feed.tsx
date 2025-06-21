@@ -116,10 +116,10 @@ const Feed = () => {
     <FlatList
       data={displayedPosts}
       keyExtractor={item => item.id}
-      initialNumToRender={10}
-      maxToRenderPerBatch={10}
-      windowSize={10}
-      removeClippedSubviews={false}
+      initialNumToRender={5}
+      maxToRenderPerBatch={5}
+      windowSize={5}
+      removeClippedSubviews={true}
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={Header}
       contentContainerStyle={{paddingBottom: 30}}
