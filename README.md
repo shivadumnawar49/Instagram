@@ -27,7 +27,7 @@ This project focuses on replicating Instagram features such as stories, post ima
 6. User Profile Page - includes profile picture , user name,  bio, follower/following info. Grid tab displays post images, Reels tab displays reels as thumbnails.
 
 #Screens
-1. Home Screen - funtional with posts, stories, post interactions.
+1. Home Screen - funtional with posts images/videos, stories, and user interactions (likes, comments, shares, bookmarks).
 2. Search Screen - for future feature
 3. Post Screen - for future feature
 4. Reels Screen - for future feature
@@ -36,8 +36,14 @@ This project focuses on replicating Instagram features such as stories, post ima
 Click here to view the demo 
 https://drive.google.com/file/d/10VlCddrVHK6GOMLfmS4IHIPDh9nvh1g6/view?usp=drivesdk
 
+#credits 
+Images - pexels
+Videos - pixabay
+SVG icons - figma free community
 
 
+Thank you,
+Shiva Dumnawar.
 
 
 
