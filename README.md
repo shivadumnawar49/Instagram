@@ -17,6 +17,7 @@ This project focuses on replicating Instagram features such as stories, post ima
 <img src='https://github.com/user-attachments/assets/4ce0904f-9804-4fbe-9a82-5de425057eb2' width='300' />
 <img src='https://github.com/user-attachments/assets/3c799b44-4182-4f8b-80da-ee15cab2e6eb' width='300' />
 
+<br/>
 
 #Features
 1. React Native and TypeScript - setup with scalable component structure
