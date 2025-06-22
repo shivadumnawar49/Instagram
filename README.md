@@ -42,8 +42,8 @@ https://drive.google.com/file/d/10VlCddrVHK6GOMLfmS4IHIPDh9nvh1g6/view?usp=drive
 #credits  <br/>
 Images - pexels <br/> 
 Videos - pixabay <br/>
-SVG icons - figma free community
-
+SVG icons - figma free community <br/>
+https://www.figma.com/design/bghZMv7JpvI1kyvq2Ky0cO/Instagram-Icon-Kit--Community-?node-id=0-1&p=f&t=33zKtJVw7dyAqrCA-0
 <br/>
 
 Thank you, <br/>
