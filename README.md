@@ -3,7 +3,7 @@
 An Instagram-like mobile app UI built using React Native and TypeScript.
 
 This project focuses on replicating Instagram features such as stories, post images and videos,  user interactions (likes, shares, comments, bookmarks), user profiles with grid layout and reels section - built with clean navigation and scalable component structure. 
-
+<br/>
 
 <img src='https://github.com/user-attachments/assets/fff07e85-8a80-4c21-9bdc-af82ebffad5a' width='300' />
 <img src='https://github.com/user-attachments/assets/11e12522-f444-4832-923e-bad567ef6589' width='300' />
@@ -42,8 +42,9 @@ Images - pexels
 Videos - pixabay
 SVG icons - figma free community
 
+<br/>
 
-Thank you,
+Thank you, <br/>
 Shiva Dumnawar.
 
 
