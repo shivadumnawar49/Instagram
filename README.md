@@ -47,8 +47,7 @@ SVG icons - figma free community
 <br/>
 
 Thank you, <br/>
-Shiva Dumnawar.
-
+Dumnawar Shiva Shanker.
 
 
 
