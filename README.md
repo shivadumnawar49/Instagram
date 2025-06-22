@@ -37,9 +37,11 @@ This project focuses on replicating Instagram features such as stories, post ima
 Click here to view the demo 
 https://drive.google.com/file/d/10VlCddrVHK6GOMLfmS4IHIPDh9nvh1g6/view?usp=drivesdk
 
-#credits 
-Images - pexels
-Videos - pixabay
+<br/>
+
+#credits  <br/>
+Images - pexels <br/> 
+Videos - pixabay <br/>
 SVG icons - figma free community
 
 <br/>
